@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./styles/index.css";
 
-const TaskOverview = () => {
+const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -52,4 +53,4 @@ const TaskOverview = () => {
   );
 };
 
-export default TaskOverview;
+export default App;
