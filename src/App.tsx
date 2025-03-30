@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Task Overview</h2>
+      <h2 className="text-[72px]">Task Overview</h2>
       <table>
         <thead>
           <tr>

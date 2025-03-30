@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -35,7 +35,7 @@ module.exports = {
       name: "taskOverview",
       filename: "remoteEntry.js",
       exposes: {
-        "./TaskOverview": "./src/index.ts",
+        "./TaskOverview": "./src/App.tsx",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^19.1.0", eager: false },
@@ -48,6 +48,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
     }),
   ],
 };
