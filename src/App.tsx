@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TaskTable from "./components/RecentActivityTable";
+import "./styles/index.css";
 
 interface Task {
   id: number;
@@ -36,26 +38,9 @@ const App: React.FC = () => {
   return (
     <div className="bg-white rounded p-4">
       <h2 className="text-lg font-bold mb-4">Task Overview</h2>
-      <table className="w-full">
-        <thead>
-          <tr className="border-b">
-            <th className="text-left p-2">Title</th>
-            <th className="text-left p-2">Due Date</th>
-            <th className="text-left p-2">Assigned</th>
-            <th className="text-left p-2">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tasks.map((task) => (
-            <tr key={task.id} className="border-b">
-              <td className="p-2">{task.title}</td>
-              <td className="p-2">{task.dueDate}</td>
-              <td className="p-2">{task.assigned}</td>
-              <td className="p-2">{task.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="w-full">
+        <TaskTable data={tasks} />
+      </div>
     </div>
   );
 };
