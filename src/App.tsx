@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import "./styles/index.css";
 
-const App = () => {
-  const [tasks, setTasks] = useState([
+interface Task {
+  id: number;
+  title: string;
+  dueDate: string;
+  assigned: string;
+  status: string;
+}
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>([
     {
       id: 1,
       title: "Complete Security Audit",
@@ -27,24 +34,24 @@ const App = () => {
   ]);
 
   return (
-    <div>
-      <h2 className="text-[72px]">Task Overview</h2>
-      <table>
+    <div className="bg-white rounded p-4">
+      <h2 className="text-lg font-bold mb-4">Task Overview</h2>
+      <table className="w-full">
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Due Date</th>
-            <th>Assigned</th>
-            <th>Status</th>
+          <tr className="border-b">
+            <th className="text-left p-2">Title</th>
+            <th className="text-left p-2">Due Date</th>
+            <th className="text-left p-2">Assigned</th>
+            <th className="text-left p-2">Status</th>
           </tr>
         </thead>
         <tbody>
           {tasks.map((task) => (
-            <tr key={task.id}>
-              <td>{task.title}</td>
-              <td>{task.dueDate}</td>
-              <td>{task.assigned}</td>
-              <td>{task.status}</td>
+            <tr key={task.id} className="border-b">
+              <td className="p-2">{task.title}</td>
+              <td className="p-2">{task.dueDate}</td>
+              <td className="p-2">{task.assigned}</td>
+              <td className="p-2">{task.status}</td>
             </tr>
           ))}
         </tbody>
