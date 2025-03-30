@@ -44,6 +44,7 @@ This module displays a list of compliance tasks. It's a microfrontend designed t
 - React DOM
 - Webpack and Module Federation plugins
 - Tailwind CSS
+- Tanstack React Table
 
 ## Notes
 
