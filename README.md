@@ -20,7 +20,7 @@ This module displays a list of compliance tasks. It's a microfrontend designed t
 3.  **Start the development server:**
 
     ```bash
-    npm start
+    npm run dev
     ```
 
     The module will be available at `http://localhost:3001`.
